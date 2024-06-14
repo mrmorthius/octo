@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
   profile: React.ReactNode;
 }>) {
-  const isAdmin = true;
+  const isAdmin = false;
   return (
     <html lang="en">
       <body className={inter.className}>
