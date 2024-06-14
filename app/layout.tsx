@@ -12,28 +12,28 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  profile,
 }: Readonly<{
   children: React.ReactNode;
+  profile: React.ReactNode;
 }>) {
+  const isAdmin = true;
   return (
     <html lang="en">
       <body className={inter.className}>
         <nav>
           <ul className="flex gap-2 justify-between px-4 bg-blue-400">
             <li>
-              <Link href={"/"}>
-              Home
-            </Link>
+              <Link href={"/"}>Home</Link>
             </li>
             <li>
-              <Link href={"/about"}>
-              About
-              </Link>
+              <Link href={"/about"}>About</Link>
             </li>
           </ul>
         </nav>
         {children}
-        </body>
+        {isAdmin && profile}
+      </body>
     </html>
   );
 }
